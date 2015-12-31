@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+ 
+<record model="ir.ui.view" id="purchase_ultrasteel_view">
+  <field name="name">purchase_ultrasteel.purchase.template.form.view</field>
+  <field name="model">purchase.order</field>
+  <field name="inherit_id" ref="purchase.purchase_order_form" />
+  <field name="priority" eval="10"/>
+  <field name="arch" type="xml">
+    <field name="picking_type_id" position="after">
+      <field name="x_ship_via"/>
+	  <field name="x_consignee"/>
+    </field>
+  </field>
+</record>
+
+</data> 
+</openerp>
