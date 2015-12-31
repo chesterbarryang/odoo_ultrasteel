@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+ 
+<record model="ir.ui.view" id="partner_ultrasteel_view">
+  <field name="name">partner_ultrasteel.partner.template.form.view</field>
+  <field name="model">res.partner</field>
+  <field name="inherit_id" ref="base.view_partner_form" /> 
+  <field name="priority" eval="10"/>
+  <field name="arch" type="xml">
+    <field name="email" position="after">
+      <field name="x_tin"/>
+    </field>
+  </field>
+</record>
+
+</data> 
+</openerp>
