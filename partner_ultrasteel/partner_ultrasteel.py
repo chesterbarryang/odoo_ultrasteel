@@ -7,6 +7,7 @@ class partner_ultrasteel(models.Model):
 
     @api.one
     def _compute_credits(self):
+        print "Chester was here"
         self.outstanding_credits_debits_widget = json.dumps(False)
         domain = [('journal_id.type', 'in', ('bank', 'cash')), ('account_id', '=', self.account_id.id), ('partner_id', '=', self.env['res.partner']._find_accounting_partner(self.partner_id).id), ('reconciled', '=', False), ('amount_residual', '!=', 0.0)]
         if self.type in ('out_invoice', 'in_refund'):
