@@ -10,6 +10,7 @@
   <field name="arch" type="xml">
     <field name="email" position="after">
       <field name="x_tin"/>
+      <field name="x_credit"/>
     </field>
   </field>
 </record>
