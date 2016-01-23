@@ -10,7 +10,7 @@
       <field name="inherit_id" ref="stock.quant_search_view"/>
       <field name="arch" type="xml">
 
-        <xpath expr="//filter[@string='Owner']" position="replace" />
+        <xpath expr="//group[2]/filter[3]" position="replace" />
         <!-- <filter string='Owner' position="replace"/> -->
 
         <filter name="locationgroup" position="after">
