@@ -16,6 +16,9 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 {'name': 'Stock Ownership Availability Rules',
  'summary': 'Enforce ownership on stock availability',
+  'description': """
+This version is for Odoo 9 release
+    """,
  'version': '0.2',
  'author': "Camptocamp,Odoo Community Association (OCA)",
  'category': 'Purchase Management',
