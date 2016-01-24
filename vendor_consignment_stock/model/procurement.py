@@ -35,7 +35,8 @@ class Procurement(models.Model):
         for proc in self:
             # The order line id can be False if there was an error.
             # Do nothing in that case because errors are handled in make_po().
-            if result.get(proc.id):
+            ### if result.get(proc.id):
+            if proc.id in result:
                 order_line = line_model.browse(result[proc.id])
 
                 order_line.order_id.is_vci = True
