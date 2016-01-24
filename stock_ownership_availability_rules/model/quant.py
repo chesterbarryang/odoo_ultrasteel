@@ -40,9 +40,12 @@ class Quant(models.Model):
             #     ).partner_id.id
             # )
 
+            company_id = vals.get('company_id', self.env.user.company_id.id)
+
             vals['owner_id'] = (
                 location.partner_id.id or
-                location.company_id.partner_id.id
+                location.company_id.partner_id.id or
+                self.env['res.company'].browse(company_id).partner_id.id
             )
 
         return super(Quant, self).create(vals)
