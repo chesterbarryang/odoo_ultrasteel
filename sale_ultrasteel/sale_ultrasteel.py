@@ -8,6 +8,8 @@ _logger = logging.getLogger(__name__)
 class sale_ultrasteel(models.Model):
     _inherit = "sale.order.line"
 
+    _product_id = None
+
     def check_margin(self, cr, uid, ids, product_id, unit_price, context=None):
         res = {}
 
@@ -46,6 +48,11 @@ class sale_ultrasteel(models.Model):
     @api.onchange('price_unit')
     def price_unit_change(self):
         _logger.info('Start: price_unit_change')
+
+        if self.product_id == self._product_id:
+            return {}
+
+        self._product_id = self.product_id
         if not self.product_id:
             return {'domain': {'product_uom': []}}
 
