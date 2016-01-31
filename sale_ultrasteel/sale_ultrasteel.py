@@ -8,8 +8,8 @@ _logger = logging.getLogger(__name__)
 class sale_ultrasteel(models.Model):
     _inherit = "sale.order.line"
 
-    _product_id = None
-    _logger.info('Init: _product_id = %s', _product_id )
+    sale_ultrasteel._product_id = None
+    _logger.info('Init: _product_id = %s', sale_ultrasteel._product_id )
 
 
     def check_margin(self, cr, uid, ids, product_id, unit_price, context=None):
