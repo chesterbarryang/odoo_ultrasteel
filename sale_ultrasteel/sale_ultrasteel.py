@@ -8,8 +8,8 @@ _logger = logging.getLogger(__name__)
 class sale_ultrasteel(models.Model):
     _inherit = "sale.order.line"
 
-    sale_ultrasteel._product_id = None
-    _logger.info('Init: _product_id = %s', sale_ultrasteel._product_id )
+    _product_id = None
+    _logger.info('Init: _product_id = %s', _product_id )
 
 
     def check_margin(self, cr, uid, ids, product_id, unit_price, context=None):
@@ -51,12 +51,14 @@ class sale_ultrasteel(models.Model):
     def price_unit_change(self):
         _logger.info('Start: price_unit_change')
 
+        global _product_id
+
         _logger.info('Current selected product: %s', self.product_id)
-        _logger.info('Previous selected product: %s', self._product_id)
-        if self.product_id == self._product_id:
+        _logger.info('Previous selected product: %s', _product_id)
+        if self.product_id == _product_id:
             return {}
 
-        self._product_id = self.product_id
+        _product_id = self.product_id
         _logger.info('Set new active product: %s', self._product_id)
 
         if not self.product_id:
