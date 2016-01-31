@@ -75,8 +75,14 @@ class sale_ultrasteel(models.Model):
         if self.order_id.pricelist_id and self.order_id.partner_id:
             vals['price_unit'] = self.env['account.tax']._fix_tax_included_price(product.price, product.taxes_id, self.tax_id)
 
+        # Add warning that changing the price is not allowed during SO
+        warning = {
+            'title': _("Warning"),
+            'message': _('Unit price given, is less than the sales price of the selected product. Please change (or contact your sales manager to change) the sales price of the selected product.'),
+            }
+
         _logger.info('Update before return: %s', vals)
         self.update(vals)
-        return {'domain': domain}
+        return {'domain': domain, 'warning': warning}
 
 sale_ultrasteel()

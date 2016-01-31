@@ -5,7 +5,7 @@
     'author': "Chester Ang",
     'category': "Tools",
     'depends': ['sale'],
-    'data': ["sale_ultrasteel_view.xml"],
+    'data': [],
     'demo': [],
     'installable': True
 }
