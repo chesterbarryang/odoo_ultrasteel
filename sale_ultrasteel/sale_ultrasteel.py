@@ -9,6 +9,8 @@ class sale_ultrasteel(models.Model):
     _inherit = "sale.order.line"
 
     _product_id = None
+    _logger.info('Init: _product_id = %s', _product_id )
+
 
     def check_margin(self, cr, uid, ids, product_id, unit_price, context=None):
         res = {}
@@ -55,6 +57,8 @@ class sale_ultrasteel(models.Model):
             return {}
 
         self._product_id = self.product_id
+        _logger.info('Set new active product: %s', self._product_id)
+
         if not self.product_id:
             return {'domain': {'product_uom': []}}
 
