@@ -6,7 +6,7 @@ class sale_ultrasteel(models.Model):
     _inherit = "sale.order.line"
 
     def check_margin(self, cr, uid, ids, product_id, unit_price, context=None):
-      # res = {}
+      res = {}
       # warning = {}
       # sale_price = None
       # if self.order_id.pricelist_id and self.order_id.partner_id:
@@ -36,8 +36,6 @@ class sale_ultrasteel(models.Model):
       #   return {'value': res.get('value'), 'warning':warning}
       # else:
       #   pass
-
-      print self
 
     @api.multi
     @api.onchange('price_unit')
@@ -69,7 +67,6 @@ class sale_ultrasteel(models.Model):
         if self.order_id.pricelist_id and self.order_id.partner_id:
             vals['price_unit'] = self.env['account.tax']._fix_tax_included_price(product.price, product.taxes_id, self.tax_id)
         self.update(vals)
-        print vals
         return {'domain': domain}
 
 sale_ultrasteel()
