@@ -11,7 +11,7 @@ class sale_ultrasteel(models.Model):
     def check_margin(self, cr, uid, ids, product_id, unit_price, context=None):
         res = {}
 
-        _logger.debug('Start: check_margin()')
+        _logger.info('Start: check_margin()')
       # warning = {}
       # sale_price = None
       # if self.order_id.pricelist_id and self.order_id.partner_id:
@@ -45,7 +45,7 @@ class sale_ultrasteel(models.Model):
     @api.multi
     @api.onchange('price_unit')
     def price_unit_change(self):
-        _logger.debug('Start: price_unit_change')
+        _logger.info('Start: price_unit_change')
         if not self.product_id:
             return {'domain': {'product_uom': []}}
 
@@ -63,7 +63,7 @@ class sale_ultrasteel(models.Model):
             uom=self.product_uom.id
         )
 
-        _logger.debug('Product: %s', product)
+        _logger.info('Product: %s', product)
 
         name = product.name_get()[0][1]
         if product.description_sale:
@@ -75,7 +75,7 @@ class sale_ultrasteel(models.Model):
         if self.order_id.pricelist_id and self.order_id.partner_id:
             vals['price_unit'] = self.env['account.tax']._fix_tax_included_price(product.price, product.taxes_id, self.tax_id)
 
-        _logger.debug('Update before return: %s', vals)
+        _logger.info('Update before return: %s', vals)
         self.update(vals)
         return {'domain': domain}
 
