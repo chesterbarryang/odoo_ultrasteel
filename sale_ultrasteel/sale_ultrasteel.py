@@ -37,4 +37,22 @@ class sale_ultrasteel(models.Model):
       else:
         pass
 
+    @api.onchange('price_unit')
+    def price_unit_change(self):
+      res = {}
+      warning = {}
+      sale_price = None
+
+      if self.order_id.pricelist_id and self.order_id.partner_id:
+          product = self.product_id.with_context(
+              lang=self.order_id.partner_id.lang,
+              partner=self.order_id.partner_id.id,
+              quantity=self.product_uom_qty,
+              date_order=self.order_id.date_order,
+              pricelist=self.order_id.pricelist_id.id,
+              uom=self.product_uom.id
+          )
+          self.price_unit = self.env['account.tax']._fix_tax_included_price(product.price, product.taxes_id, self.tax_id)
+
+
 sale_ultrasteel()
