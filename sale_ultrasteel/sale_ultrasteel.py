@@ -49,6 +49,8 @@ class sale_ultrasteel(models.Model):
     def price_unit_change(self):
         _logger.info('Start: price_unit_change')
 
+        _logger.info('Current selected product: %s', self.product_id)
+        _logger.info('Previous selected product: %s', self._product_id)
         if self.product_id == self._product_id:
             return {}
 
