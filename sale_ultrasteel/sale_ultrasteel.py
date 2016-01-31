@@ -1,4 +1,4 @@
-from openerp.osv import fields, osv
+from openerp import api, fields, models, _
 from openerp import tools
 from openerp.tools.translate import _
 
