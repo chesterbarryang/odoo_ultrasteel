@@ -8,9 +8,9 @@
   <field name="inherit_id" ref="sale.view_order_form"/>
   <field name="priority" eval="50"/>
   <field name="arch" type="xml">
-    <!--<xpath expr="//field[@name='price_unit']" position="attributes">-->
-      <!--<attribute name="on_change">check_margin(product_id,price_unit)</attribute>-->
-    <!--</xpath>-->
+    <xpath expr="//field[@name='price_unit']" position="attributes">
+      <attribute name="on_change">check_margin(product_id,price_unit)</attribute>
+    </xpath>
   </field>
 </record>
 
