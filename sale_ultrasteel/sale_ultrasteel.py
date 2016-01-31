@@ -2,7 +2,7 @@ from openerp import api, fields, models, _
 from openerp import tools
 from openerp.tools.translate import _
 
-class sale_ultrasteel(osv.Model):
+class sale_ultrasteel(models.Model):
     _inherit = "sale.order.line"
 
     def check_margin(self, cr, uid, ids, product_id, unit_price, context=None):
