@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Ultrasteel Cheque Payment Addons",
+    'name': "Cheque Payment Addons",
     "summary": "Additional fields for cheque payments",
     'description': """
 Add new fields if cheque payment:
@@ -12,7 +12,7 @@ Add new fields if cheque payment:
     'author': "Chester Ang",
     'category': "Tools",
     'depends': ['account'],
-    'data': [],
+    'data': ["account_bank_payment_view.xml"],
     'demo': [],
     'installable': True
 }
