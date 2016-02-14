@@ -11,4 +11,9 @@ class account_bank_payment(models.Model):
     x_cheque_no = fields.Char(string='Cheque No.',help='Cheque number. For cheque payments')
     x_payment_type = fields.Selection(related='journal_id.type')
 
+    @api.onchange('journal_id')
+    def _onchange_journal_id(self):
+        if self.journal_id:
+            self.x_payment_type = self.journal_id.type
+
 account_bank_payment()
