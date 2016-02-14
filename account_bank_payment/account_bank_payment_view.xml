@@ -4,7 +4,7 @@
 
 <record model="ir.ui.view" id="account_bank_payment_view">
   <field name="name">account.bank.payment.invoice.form</field>
-  <field name="model">account.payment</field>
+  <field name="model">account.bank.payments</field>
   <field name="inherit_id" ref="account.view_account_payment_invoice_form" />
   <field name="priority" eval="10"/>
   <field name="arch" type="xml">
