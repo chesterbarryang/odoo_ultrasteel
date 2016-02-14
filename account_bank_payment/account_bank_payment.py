@@ -3,7 +3,6 @@ from openerp import tools
 from openerp.tools.translate import _
 
 class account_bank_payment(models.Model):
-    _name ='account_bank_payments'
     _inherit = ['account.payment']
     _description = "Capture additional fields for cheque payments"
 
