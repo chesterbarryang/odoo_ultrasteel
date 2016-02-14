@@ -7,6 +7,9 @@ Add new fields if cheque payment:
 1. Bank Name
 2. Bank Branch
 3. Cheque Number
+
+- Show only bank fields if payment type is cheque
+- Set the fields as required
     """,
     'version': "1.0",
     'author': "Chester Ang",
