@@ -4,7 +4,7 @@ from openerp.tools.translate import _
 
 class account_bank_payment(models.Model):
     _name = "account.bank.payments"
-    _inherit = ['account.abstract.payment']
+    _inherit = ['account.payment']
     _description = "Capture additional fields for cheque payments"
 
     x_bank_name = fields.Char(string='Bank',help='Bank name')
