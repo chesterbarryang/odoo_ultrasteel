@@ -9,9 +9,9 @@
   <field name="priority" eval="10"/>
   <field name="arch" type="xml">
     <field name="communication" position="after">
-      <field name="x_bank_name" attrs="{'invisible': [('x_payment_type', '=', 'Bank')]"/>
-      <field name="x_bank_branch" attrs="{'invisible': [('x_payment_type', '=', 'Cash')]"/>
-      <field name="x_cheque_no" attrs="{'invisible': [('x_payment_type', '=', 'Cash')]"/>
+      <field name="x_bank_name" attrs="{'invisible': [('x_payment_type', '=', 'bank')]"/>
+      <field name="x_bank_branch" attrs="{'invisible': [('x_payment_type', '=', 'cash')]"/>
+      <field name="x_cheque_no" attrs="{'invisible': [('x_payment_type', '=', 'cash')]"/>
     </field>
   </field>
 </record>
