@@ -12,7 +12,7 @@
       <field name="x_payment_type" invisible="1"/>
       <field name="x_bank_name" attrs="{'required': [('x_payment_type', '=', 'bank')], 'invisible': [('x_payment_type', '!=', 'bank')]}"/>
       <field name="x_bank_branch" attrs="{'required': [('x_payment_type', '=', 'bank')], 'invisible': [('x_payment_type', '!=', 'bank')]}"/>
-      <field name="x_cheque_no" attrs="{'required': [('x_payment_type', '=', 'bank')], 'invisible': [('x_payment_type', '!=', 'bank')]}"/>
+      <field name="x_cheque_no" groups="base.group_sale_manager" attrs="{'required': [('x_payment_type', '=', 'bank')], 'invisible': [('x_payment_type', '!=', 'bank')]}"/>
     </field>
   </field>
 </record>
