@@ -29,7 +29,7 @@
       <field name="x_msrp"/>
     </field>
 
-    <xpath expr="//page[@string='General Information']/group/group[@name='group_standard_price']/label" position="replace">
+    <xpath expr="//page[1]/group/group[@name='group_standard_price']/label" position="replace">
       <label for="standard_price" groups="base.group_sale_manager"/>
     </xpath>
 
