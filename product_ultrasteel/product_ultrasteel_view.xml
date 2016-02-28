@@ -30,7 +30,7 @@
     </field>
 
     <div name="standard_price_uom" position="replace">
-      <div name="standard_price_uom" groups="base.group_user">
+      <div name="standard_price_uom" groups="base.group_sale_manager">
         <field name="standard_price" widget='monetary' options="{'currency_field': 'currency_id'}" class="oe_inline"/>
       </div>
     </div>
