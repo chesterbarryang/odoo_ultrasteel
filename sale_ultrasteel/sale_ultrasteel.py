@@ -39,10 +39,14 @@ class sale_ultrasteel(models.Model):
 
         self._compute_tax_id()
 
-        if self.order_id.pricelist_id and self.order_id.partner_id:
-            vals['price_unit'] = self.env['account.tax']._fix_tax_included_price(product.price, product.taxes_id, self.tax_id)
+        if self.user_has_groups('base.group_sale_manager'):
+            _logger.info('User can update price')
+        else:
+            if self.order_id.pricelist_id and self.order_id.partner_id:
+                _logger.info('Current user cannot change price')
+                vals['price_unit'] = self.env['account.tax']._fix_tax_included_price(product.price, product.taxes_id, self.tax_id)
+                _logger.info('Update before return: %s', vals)
 
-        _logger.info('Update before return: %s', vals)
         self.update(vals)
         return {'domain': domain}
 
