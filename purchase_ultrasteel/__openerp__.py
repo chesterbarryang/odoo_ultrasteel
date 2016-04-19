@@ -5,10 +5,12 @@
     'author': "Chester Ang",
     'category': "Tools",
     'depends': ['purchase'],
-    'data': ["purchase_ultrasteel_view.xml"],
-	"data": [
-        "purchase_ultrasteel_view.xml",
-        "report_purchaseorder.xml",
+    'data': [
+        'purchase_report.xml',
+        'purchase_ultrasteel_view.xml',
+        'report_purchaseorder.xml',
+
+        "views/report_purchaseorder_ultrasteel.xml",
     ],
     'demo': [],
     'installable': True
