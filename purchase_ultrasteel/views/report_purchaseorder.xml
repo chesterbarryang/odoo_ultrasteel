@@ -121,20 +121,18 @@
                                     t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
                             </td>
                         </tr>
-
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <tr class="border-black">
-                            <td class="text-center"><strong>Approved By</strong></td>
-                        </tr>
                     </table>
                 </div>
             </div>
 
             <p t-field="o.notes"/>
             <div class="oe_structure"/>
+
+            <div class="col-xs-5 col-xs-offset-1">
+                <div class="border-black">
+                    <td class="text-center"><strong>Approved By</strong></td>
+                </div>
+            </div>
         </div>
     </t>
 </template>
