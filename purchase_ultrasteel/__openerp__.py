@@ -9,7 +9,7 @@
         'purchase_report.xml',
         'purchase_ultrasteel_view.xml',
 
-        "views/report_purchaseorder_ultrasteel.xml",
+        "views/report_purchaseorder.xml",
     ],
     'demo': [],
     'installable': True

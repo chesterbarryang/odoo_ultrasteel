@@ -6,8 +6,8 @@
             id="action_report_purchase_order_ultrasteel"
             model="purchase.order" 
             report_type="qweb-pdf"
-            name="purchase_ultrasteel.report_purchaseorder_ultrasteel"
-            file="purchase_ultrasteel.report_purchaseorder_ultrasteel"
+            name="purchase_ultrasteel.report_purchaseorder"
+            file="purchase_ultrasteel.report_purchaseorder"
         />
 
     </data>
