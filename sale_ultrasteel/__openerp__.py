@@ -5,7 +5,11 @@
     'author': "Chester Ang",
     'category': "Tools",
     'depends': ['sale'],
-    'data': [],
+    'data': [
+        'sale_report.xml',
+
+        "views/report_saleorder.xml",
+    ],
     'demo': [],
     'installable': True
 }
