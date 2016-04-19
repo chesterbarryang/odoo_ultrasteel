@@ -4,7 +4,7 @@
     'version': "1.0",
     'author': "Chester Ang",
     'category': "Tools",
-    'depends': ['purchase'],
+    'depends': ['purchase','report'],
     'data': [
         'purchase_report.xml',
         'purchase_ultrasteel_view.xml',

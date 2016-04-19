@@ -3,7 +3,7 @@
     <data>
         <report 
             string="Purchase Order (Custom)"
-            id="action_report_purchase_order" 
+            id="action_report_purchase_order_ultrasteel"
             model="purchase.order" 
             report_type="qweb-pdf"
             name="purchase.report_purchaseorder_ultrasteel"
