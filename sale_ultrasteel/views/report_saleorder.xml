@@ -70,13 +70,12 @@
                 </thead>
 
                 <t t-set="row_counter" t-value="1"/>
-                <t t-esc="row_counter"/>
 
                <tbody class="sale_tbody">
                     <t t-foreach="doc.order_line" t-as="l">
                         <tr t-if="l.product_uom_qty">
                             <td>
-                                <span t-field="row_counter"/>
+                                <t t-esc="row_counter"/>
                                 <t t-set="row_counter" t-value="row_counter + 1"/>
                             </td>
                             <td>
