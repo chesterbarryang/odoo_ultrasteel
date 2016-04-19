@@ -8,7 +8,6 @@
     'data': [
         'purchase_report.xml',
         'purchase_ultrasteel_view.xml',
-        'report_purchaseorder.xml',
 
         "views/report_purchaseorder_ultrasteel.xml",
     ],
