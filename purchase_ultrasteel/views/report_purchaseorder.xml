@@ -134,7 +134,7 @@
                     <table class="table table-condensed">
                         <tr class="border-black">
                             <td class="text-right"><strong>Approved </strong></td>
-                            <td class="text-right"><strong>By </strong></td>
+                            <td class="text-left"><strong>By </strong></td>
                         </tr>
                     </table>
                 </div>
