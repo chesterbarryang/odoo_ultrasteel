@@ -121,6 +121,16 @@
                                     t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
                             </td>
                         </tr>
+
+                        <tr/>
+                        <tr/>
+                        <tr/>
+                        <tr/>
+                        <tr/>
+                        <tr class="border-black">
+                            <td/>
+                            <td class="text-right"><strong>Approved By</strong></td>
+                        </tr>
                     </table>
                 </div>
             </div>
