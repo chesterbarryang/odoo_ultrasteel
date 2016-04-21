@@ -81,7 +81,7 @@
                                 <t t-set="row_counter" t-value="row_counter + 1"/>
                             </td>
                             <td>
-                               <span t-field="l.default_code"/>
+                               <span t-field="l.product_id.default_code"/>
                             </td>
                             <td>
                                <span t-field="l.name"/>
@@ -93,7 +93,7 @@
                                 <span groups="product.group_uom" t-field="l.product_uom"/>
                             </td>
                             <td class="text-right">
-                                <span t-field="l.list_price"/>
+                                <span t-field="l.product_id.list_price"/>
                             </td>
                             <td class="text-right">
                                 <span t-field="l.price_unit"/>
