@@ -7,6 +7,7 @@
     'depends': ['sale'],
     'data': [
         'sale_report.xml',
+        "sale_ultrasteel_view.xml"
 
         "views/report_saleorder.xml",
     ],
