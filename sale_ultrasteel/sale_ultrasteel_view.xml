@@ -10,7 +10,7 @@
   <field name="arch" type="xml">
 
       <xpath expr="//page[1]/field/form/group/group/field[@name='price_unit']" position="replace">
-          <field name="x_product_id"
+          <field name="x_list_price"
              string = "Sell Price"
              attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}"/>
           <field name="price_unit"
