@@ -1,11 +1,13 @@
 from openerp import api, fields, models, _
 from openerp import tools
 from openerp.tools.translate import _
+from openerp.osv import osv, fields, expression
 import logging
 
 _logger = logging.getLogger(__name__)
 
-class sale_ultrasteel(models.Model):
+#class sale_ultrasteel(models.Model):
+class sale_ultrasteel(osv.osv):
     _inherit = "sale.order.line"
 
     @api.multi
