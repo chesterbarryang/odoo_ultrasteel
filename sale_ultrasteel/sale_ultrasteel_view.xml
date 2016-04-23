@@ -11,7 +11,15 @@
 
       <xpath expr="//page[1]/field/form/group/group/field[@name='price_unit']" position="replace">
           <field name="x_list_price"
-             string = "Given Price"
+             string = "Sell Price"/>
+
+          <field name="price_unit"
+             string = "Given Price"/>
+      </xpath>
+
+      <xpath expr="//page[1]/field/tree/field[@name='price_unit']" position="replace">
+          <field name="x_list_price"
+             string = "Sell Price"
              attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}"/>
 
           <field name="price_unit"
