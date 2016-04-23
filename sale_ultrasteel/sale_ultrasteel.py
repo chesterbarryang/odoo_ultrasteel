@@ -51,7 +51,7 @@ class sale_ultrasteel(models.Model):
         return {'domain': domain}
 
     _columns= {
-        'x_price_list': fields.Char('Sell Price', related='product_id.price_list',store=False)
+        'x_list_price': fields.Char('Sell Price', related='product_id.list_price',store=False)
     }
 
 

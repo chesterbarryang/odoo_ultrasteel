@@ -8,14 +8,16 @@
   <field name="inherit_id" ref="sale.view_order_form" />
   <field name="priority" eval="10"/>
   <field name="arch" type="xml">
-    <field name="price_unit" position="replace">
-        <field name="product_id"
+
+      <xpath expr="//page[1]/field/form/group/group/field[@name='price_unit']" position="replace">
+          <field name="x_product_id"
              string = "Sell Price"
              attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}"/>
-        <field name="price_unit"
+          <field name="price_unit"
              string = "Given Price"
              attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}"/>
-    </field>
+      </xpath>
+
   </field>
 </record>
 
