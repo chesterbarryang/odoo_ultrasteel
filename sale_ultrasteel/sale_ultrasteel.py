@@ -50,4 +50,9 @@ class sale_ultrasteel(models.Model):
         self.update(vals)
         return {'domain': domain}
 
+    _columns= {
+        'x_price_list': fields.Char('Sell Price', related='product_id.price_list',store=False)
+    }
+
+
 sale_ultrasteel()
