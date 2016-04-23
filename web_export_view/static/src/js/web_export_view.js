@@ -26,7 +26,7 @@ openerp.web_export_view = function (instance) {
         redraw: function () {
             var self = this;
             this._super.apply(this, arguments);
-            if (self.getParent().ViewManager.active_view == 'list') {
+            if (self.getParent().ViewManager.active_view.type == 'list') {
                 self.$el.find('.oe_sidebar').append(QWeb.render('AddExportViewMain', {widget: self}));
                 self.$el.find('.oe_sidebar_export_view_xls').on('click', self.on_sidebar_export_view_xls);
             }
