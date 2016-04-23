@@ -50,6 +50,6 @@ class sale_ultrasteel(models.Model):
         self.update(vals)
         return {'domain': domain}
 
-    x_list_price = fields.float(related='product_id.list_price', string='Sell Price', readonly=True)
+    x_list_price = fields.Float(related='product_id.list_price', string='Sell Price', readonly=True)
 
 sale_ultrasteel()
