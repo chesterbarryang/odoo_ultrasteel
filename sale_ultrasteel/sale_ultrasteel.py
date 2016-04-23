@@ -50,8 +50,20 @@ class sale_ultrasteel(models.Model):
         self.update(vals)
         return {'domain': domain}
 
+    def _get_product_list_price(self, cr, uid, ids, name, args, context=None):
+        res={}
+        context = {}
+        product_obj = self.pool.get('product.product')
+        for record in self.browse(cr, uid, ids, context=context):
+            res[record.id] = {}
+            product_list_prices = product_obj.search(cr, uid, [('id','=',record.product_id.id)])
+            for product_list_prices_brw in product_obj.browse(cr, uid, product_list_prices, context=context):
+                res[record.id] = product_list_prices_brw.list_price
+        return res
+
     _columns= {
-        'x_list_price': fields.Char('Sell Price', related='product_id.list_price',store=False)
+        'x_list_price': fields.function(_get_product_list_price, string='Sell Price', type='many2one')
+
     }
 
 
