@@ -1,13 +1,11 @@
 from openerp import api, fields, models, _
 from openerp import tools
 from openerp.tools.translate import _
-from openerp.osv import osv, fields, expression
 import logging
 
 _logger = logging.getLogger(__name__)
 
-#class sale_ultrasteel(models.Model):
-class sale_ultrasteel(osv.osv):
+class sale_ultrasteel(models.Model):
     _inherit = "sale.order.line"
 
     @api.multi
@@ -51,5 +49,7 @@ class sale_ultrasteel(osv.osv):
 
         self.update(vals)
         return {'domain': domain}
+
+    x_list_price = fields.Many2one(related='product_id.list.price', store=False, string='Sell Price', readonly=True)
 
 sale_ultrasteel()
