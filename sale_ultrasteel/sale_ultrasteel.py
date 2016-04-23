@@ -50,6 +50,6 @@ class sale_ultrasteel(models.Model):
         self.update(vals)
         return {'domain': domain}
 
-    x_list_price = fields.Many2one(related='product_id.list.price', store=False, string='Sell Price', readonly=True)
+    x_list_price = fields.Many2one(related='product_id.list_price', store=False, string='Sell Price', readonly=True)
 
 sale_ultrasteel()
