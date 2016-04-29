@@ -25,13 +25,13 @@ class ReportBillingApproval(models.AbstractModel):
                         AND p.id = inv.partner_id  \
                         AND inv.type = 'in_invoice' \
                         AND inv.state = 'open' \
-                        AND p.id = 9) as a \
+                        AND p.id = %d) as a \
                     LEFT JOIN \
                         (SELECT  pol.id as pol_id, po.id as po_id, po.name as po_name \
                         FROM purchase_order as po, purchase_order_line as pol \
                         WHERE pol.order_id = po.id) as b \
                     ON a.purchase_line_id = b.pol_id \
-                    ORDER BY a.number ")
+                    ORDER BY a.number ", partner)
 
         res = cr.dictfetchall()
 
@@ -46,7 +46,7 @@ class ReportBillingApproval(models.AbstractModel):
         #partner_id = data['form']['partner_id']
         partner_id = data['form'].get('partner_id')
 
-        _logger.debug('partner_id:', tuple(partner_id))
+        _logger.error('partner_id:', partner_id)
 
         # target_move = data['form'].get('target_move', 'all')
         # date_from = data['form'].get('date_from', time.strftime('%Y-%m-%d'))
