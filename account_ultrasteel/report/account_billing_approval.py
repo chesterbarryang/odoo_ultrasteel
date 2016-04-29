@@ -45,7 +45,7 @@ class ReportBillingApproval(models.AbstractModel):
 
         partner_id = data['form']['partner_id']
 
-        _logger.info('partner_id:', partner_id)
+        _logger.info('partner_id:', tuple(partner_id))
 
         # target_move = data['form'].get('target_move', 'all')
         # date_from = data['form'].get('date_from', time.strftime('%Y-%m-%d'))
