@@ -12,7 +12,7 @@ class AccountBillingApproval(models.TransientModel):
     _inherit = "account.common.report"
     _description = "Accounting Billing Approval"
 
-    partner_id = fields.Many2one('res.partner', string='Partner', readonly=True)
+    partner_id = fields.Many2one('res.partner', string='Partner', required=True)
 
     @api.multi
     def check_report(self):
