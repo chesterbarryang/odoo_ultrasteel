@@ -9,7 +9,7 @@ from openerp.exceptions import UserError
 
 class AccountBillingApproval(models.TransientModel):
     _name = "account.billing.approval"
-    _inherit = "account.common.report"
+    #_inherit = "account.common.report"
     _description = "Accounting Billing Approval"
 
     partner_id = fields.Many2one('res.partner', string='Partner', required=True)
