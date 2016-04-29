@@ -10,10 +10,8 @@ Add Account Payable Billing Approval report
     """,
     'author': "Chester Ang",
     'category': 'Accounting & Finance',
-	'data': ['report/account_billing_approval.py',
-             'views/account_report.xml',
+	'data': ['views/account_report.xml',
              'views/report_billingapproval.xml',
-             'wizard/account_report_billing_approval.py',
              'wizard/account_report_billing_approval_view.xml'],
     'demo': [],
     'installable': True
