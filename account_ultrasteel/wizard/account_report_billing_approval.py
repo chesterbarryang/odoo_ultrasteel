@@ -5,7 +5,9 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from openerp import api, fields, models, _
 from openerp.exceptions import UserError
+import logging
 
+_logger = logging.getLogger(__name__)
 
 class AccountBillingApproval(models.TransientModel):
     _name = "account.billing.approval"
@@ -28,6 +30,9 @@ class AccountBillingApproval(models.TransientModel):
         data['form'] = self.read(['partner_id'])[0]
         used_context = self._build_contexts(data)
         data['form']['used_context'] = dict(used_context, lang=self.env.context.get('lang', 'en_US'))
+
+        _logger.error('form:', data['form'])
+
         return self._print_report(data)
 
     def _print_report(self, data):
