@@ -9,7 +9,10 @@
                 <separator string="Account Payable Billing Approval"/>
                 <label string="Account Payable Billing Approval displays all outstanding invoices from selected vendor for approval."/>
                 <group col="4">
-                    <field name="partner_id" context="{'search_default_supplier':1, 'default_supplier':1, 'default_customer':0}" domain="[('supplier','=',True)]"/>
+                    <!--
+                        <field name="partner_id" context="{'search_default_supplier':1, 'default_supplier':1, 'default_customer':0}" domain="[('supplier','=',True)]"/>
+                    -->
+                    <field name="partner_id" domain="[('supplier','=',True)]"/>
                 </group>
 
                 <footer>
