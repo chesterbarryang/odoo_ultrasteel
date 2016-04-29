@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_billingapproval">
+    <t t-call="report.html_container">
+        <t t-call="report.internal_layout">
+            <div class="page">
+                <h2>Account Payable Billing Approval</h2>
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>INVOICE TO</th>
+                            <th>INVOICE NO</th>
+                            <th>PR NUMBER</th>
+                            <th>DATE RECEIVE</th>
+                            <th>AMOUNT</th>
+                            <th>TAX</th>
+                            <th>NETTED AMOUNT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="get_partner_lines" t-as="inv">
+                            <td>
+                                <span t-esc="inv['partner_name']"/>
+                            </td>
+                            <td>
+                                <span t-esc="inv['number']"/>
+                            </td>
+                            <td>
+                                <span t-esc="inv['po_name']"/>
+                            </td>
+                            <td>
+                                <span t-esc="inv['date_invoice']"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-esc="inv['amount_untaxed']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                            </td>
+                            <td class="text-right">
+                                <span t-esc="inv['amount_tax']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                            </td>
+                            <td class="text-right">
+                                <span t-esc="inv['amount_total']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </t>
+</template>
+</odoo>

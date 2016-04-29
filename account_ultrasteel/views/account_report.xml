@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- QWeb Reports -->
+        <report
+            id="action_report_billing_approval"
+            model="res.partner"
+            string="Account Payable Billing Approval"
+            menu="False"
+            report_type="qweb-pdf"
+            name="account_ultrasteel.report_billingapproval"
+            file="account_ultrasteel.report_billingapproval"
+        />
+
+    </data>
+</openerp>
