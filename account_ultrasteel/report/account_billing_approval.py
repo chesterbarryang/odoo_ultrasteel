@@ -6,7 +6,7 @@ from openerp import api, models
 
 class ReportBillingApproval(models.AbstractModel):
 
-    _name = 'report.account.report_billingapproval'
+    _name = 'report.account_ultrasteel.report_billingapproval'
 
     def _get_partner_open_invoice(self, partner):
         res = []

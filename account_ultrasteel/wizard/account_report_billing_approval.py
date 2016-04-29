@@ -27,4 +27,4 @@ class AccountBillingApproval(models.TransientModel):
 
     def _print_report(self, data):
         data['form'].update(self.read(['partner_id'])[0])
-        return self.env['report'].get_action(self, 'account.report_billing_approval', data=data)
+        return self.env['report'].get_action(self, 'account_ultrasteel.report_billingapproval', data=data)
