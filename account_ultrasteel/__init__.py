@@ -3,3 +3,4 @@
 
 import wizard
 import report
+from openerp import SUPERUSER_ID
