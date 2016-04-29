@@ -18,7 +18,7 @@ class AccountBillingApproval(models.TransientModel):
 
     def _build_contexts(self, data):
         result = {}
-        result['partner_id'] = 'partner_id' in data['form'] and data['form']['partner_id'] or False
+        result['partner_id'] = data['form']['partner_id'] or False
         return result
 
     @api.multi
@@ -31,10 +31,11 @@ class AccountBillingApproval(models.TransientModel):
         used_context = self._build_contexts(data)
         data['form']['used_context'] = dict(used_context, lang=self.env.context.get('lang', 'en_US'))
 
-        _logger.error('partner id converted:', data['form']['partner_id'])
+        _logger.error('partner id converted:', used_context)
 
         return self._print_report(data)
 
     def _print_report(self, data):
+        _logger.error('partner value:', self.read(['partner_id'])[0])
         data['form'].update(self.read(['partner_id'])[0])
         return self.env['report'].get_action(self, 'account_ultrasteel.report_billingapproval', data=data)
