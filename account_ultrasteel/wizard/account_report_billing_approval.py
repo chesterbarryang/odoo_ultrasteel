@@ -14,6 +14,11 @@ class AccountBillingApproval(models.TransientModel):
 
     partner_id = fields.Many2one('res.partner', string='Partner', required=True)
 
+    def _build_contexts(self, data):
+        result = {}
+        result['partner_id'] = 'partner_id' in data['form'] and data['form']['partner_id'] or False
+        return result
+
     @api.multi
     def check_report(self):
         self.ensure_one()
@@ -21,8 +26,8 @@ class AccountBillingApproval(models.TransientModel):
         data['ids'] = self.env.context.get('active_ids', [])
         data['model'] = self.env.context.get('active_model', 'ir.ui.menu')
         data['form'] = self.read(['partner_id'])[0]
-        #used_context = self._build_contexts(data)
-        #data['form']['used_context'] = dict(used_context, lang=self.env.context.get('lang', 'en_US'))
+        used_context = self._build_contexts(data)
+        data['form']['used_context'] = dict(used_context, lang=self.env.context.get('lang', 'en_US'))
         return self._print_report(data)
 
     def _print_report(self, data):
