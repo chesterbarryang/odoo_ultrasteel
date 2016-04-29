@@ -31,7 +31,7 @@ class AccountBillingApproval(models.TransientModel):
         used_context = self._build_contexts(data)
         data['form']['used_context'] = dict(used_context, lang=self.env.context.get('lang', 'en_US'))
 
-        _logger.error('self partner ids:', self.partner_id)
+        _logger.error('self partner ids:', self.partner_id.name)
         _logger.error('ids:', tuple(data['ids']))
         _logger.error('model:', tuple(data['model']))
         _logger.error('form:', tuple(data['form']))
@@ -40,6 +40,6 @@ class AccountBillingApproval(models.TransientModel):
         return self._print_report(data)
 
     def _print_report(self, data):
-        _logger.error('partner value:', self.read(['partner_id'])[0])
+        _logger.error('partner value:', self.read(['partner_id'])[0].name)
         data['form'].update(self.read(['partner_id'])[0])
         return self.env['report'].get_action(self, 'account_ultrasteel.report_billingapproval', data=data)
