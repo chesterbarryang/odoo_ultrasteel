@@ -25,13 +25,13 @@ class ReportBillingApproval(models.AbstractModel):
                         AND p.id = inv.partner_id  \
                         AND inv.type = 'in_invoice' \
                         AND inv.state = 'open' \
-                        AND p.id = 9) as a \
+                        AND p.id in %s) as a \
                     LEFT JOIN \
                         (SELECT  pol.id as pol_id, po.id as po_id, po.name as po_name \
                         FROM purchase_order as po, purchase_order_line as pol \
                         WHERE pol.order_id = po.id) as b \
                     ON a.purchase_line_id = b.pol_id \
-                    ORDER BY a.number )")
+                    ORDER BY a.number ", tuple(partner))
 
         res = cr.dictfetchall()
 
