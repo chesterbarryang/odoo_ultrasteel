@@ -32,10 +32,7 @@ class AccountBillingApproval(models.TransientModel):
         used_context = self._build_contexts(data)
         data['form']['used_context'] = dict(used_context, lang=self.env.context.get('lang', 'en_US'))
 
-        _logger.error('START')
-        _logger.error('self partner ids: %s', self.partner_id)
-        _logger.error('used_context: %s', used_context['partner_id'])
-        _logger.error('END')
+        _logger.info('used_context: %s', used_context['partner_id'])
 
         return self._print_report(data)
 
