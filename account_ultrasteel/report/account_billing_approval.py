@@ -25,7 +25,7 @@ class ReportBillingApproval(models.AbstractModel):
                         AND p.id = inv.partner_id  \
                         AND inv.type = 'in_invoice' \
                         AND inv.state = 'open' \
-                        AND p.id in %s) as a \
+                        AND p.id in (%s)) as a \
                     LEFT JOIN \
                         (SELECT  pol.id as pol_id, po.id as po_id, po.name as po_name \
                         FROM purchase_order as po, purchase_order_line as pol \
