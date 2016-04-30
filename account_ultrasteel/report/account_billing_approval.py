@@ -31,7 +31,7 @@ class ReportBillingApproval(models.AbstractModel):
                         FROM purchase_order as po, purchase_order_line as pol \
                         WHERE pol.order_id = po.id) as b \
                     ON a.purchase_line_id = b.pol_id \
-                    ORDER BY a.number ", partner)
+                    ORDER BY a.number ", tuple(partner))
 
         res = cr.dictfetchall()
 
@@ -44,7 +44,7 @@ class ReportBillingApproval(models.AbstractModel):
         docs = self.env[model].browse(self.env.context.get('active_id'))
 
         #partner_id = data['form']['partner_id']
-        partner_id = data['form'].get('partner_id')[0]
+        partner_id = data['form'].get('partner_id')
 
         _logger.info('partner_id: %s', partner_id)
 
