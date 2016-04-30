@@ -44,9 +44,9 @@ class ReportBillingApproval(models.AbstractModel):
         docs = self.env[model].browse(self.env.context.get('active_id'))
 
         #partner_id = data['form']['partner_id']
-        partner_id = data['form'].get('partner_id')
+        partner_id = data['form'].get('partner_id')[0]
 
-        _logger.error('partner_id:', partner_id)
+        _logger.error('partner_id: %s', partner_id)
 
         # target_move = data['form'].get('target_move', 'all')
         # date_from = data['form'].get('date_from', time.strftime('%Y-%m-%d'))
