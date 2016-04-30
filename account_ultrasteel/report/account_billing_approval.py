@@ -40,11 +40,14 @@ class ReportBillingApproval(models.AbstractModel):
     @api.multi
     def render_html(self, data):
         self.total_account = []
+        partner_list = []
         model = self.env.context.get('active_model')
         docs = self.env[model].browse(self.env.context.get('active_id'))
 
         #partner_id = data['form']['partner_id']
-        partner_id = data['form'].get('partner_id')
+        partner_id = data['form'].get('partner_id')[0]
+
+        partner_list.append(partner_id)
 
         _logger.info('partner_id: %s', partner_id)
 
@@ -62,7 +65,7 @@ class ReportBillingApproval(models.AbstractModel):
         # partner_movelines = self._get_partner_move_lines(data['form'], account_type, date_from, target_move)
         # movelines = partner_movelines + without_partner_movelines
 
-        partner_movelines = self._get_partner_open_invoice(partner_id)
+        partner_movelines = self._get_partner_open_invoice(partner_list)
 
 
         docargs = {
