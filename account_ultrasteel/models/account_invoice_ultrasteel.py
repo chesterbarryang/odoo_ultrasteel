@@ -1,6 +1,6 @@
 from openerp import api, fields, models, _
 
-class account_invoice(models.Model):
+class account_invoice_ultrasteel(models.Model):
     _inherit = ['account.invoice']
 
     # new_state = [
@@ -29,4 +29,4 @@ class account_invoice(models.Model):
     def action_approve_payment(self):
         self.state = 'approve'
 
-account_invoice()
+account_invoice_ultrasteel()
