@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
+
 from openerp import api, fields, models, _
+
 
 class account_invoice_ultrasteel(models.Model):
     _inherit = ['account.invoice']
