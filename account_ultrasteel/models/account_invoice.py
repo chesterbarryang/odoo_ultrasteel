@@ -1,6 +1,6 @@
 from openerp import api, fields, models, _
 
-class account_invoice_ultrasteel(models.Model):
+class account_invoice(models.Model):
     _inherit = ['account.invoice']
 
     new_state = [
@@ -14,7 +14,7 @@ class account_invoice_ultrasteel(models.Model):
         ]
 
     _columns = {
-        'state': fields.selection(new_state, string='Status', index=True, readonly=True, default='draft',
+        'state': fields.Selection(new_state, string='Status', index=True, readonly=True, default='draft',
             track_visibility='onchange', copy=False,
             help=" * The 'Draft' status is used when a user is encoding a new and unconfirmed Invoice.\n"
                  " * The 'Pro-forma' status is used the invoice does not have an invoice number.\n"
@@ -27,4 +27,4 @@ class account_invoice_ultrasteel(models.Model):
     def action_approve_payment(self):
         self.state = 'approve'
 
-account_invoice_ultrasteel()
+account_invoice()
