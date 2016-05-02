@@ -12,8 +12,7 @@ Add Account Payable Billing Approval report
     'category': 'Accounting & Finance',
 	'data': ['views/account_report.xml',
              'views/report_billingapproval.xml',
-             'views/account_invoice_ultrasteel_view.xml',
-             'views/account_invoice_ultrasteel_workflow.xml',
+
              'wizard/account_report_billing_approval_view.xml'],
     'demo': [],
     'installable': True
