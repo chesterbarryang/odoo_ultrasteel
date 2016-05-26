@@ -2,6 +2,7 @@
 {
     'name': "Ultrasteel Account Addons",
     'version': "1.0",
+    'depends': ['account'],
     'summary': 'Add on accounting features and reports for Ultrasteel',
     'description': """
 Reports
