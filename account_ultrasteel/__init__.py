@@ -4,4 +4,4 @@
 import wizard
 import report
 import models
-# from openerp import SUPERUSER_ID
+from openerp import SUPERUSER_ID
