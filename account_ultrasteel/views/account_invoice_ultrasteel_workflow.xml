@@ -11,7 +11,7 @@
         <record id="trans_payment_open_to_approved" model="workflow.transition">
             <field name="act_from" ref="account.act_open"/>
             <field name="act_to" ref="act_approved_invoice"/>
-            <field name="signal">approve_quotation</field>
+            <field name="signal">signal_approve_payment</field>
         </record>
     </data>
 </openerp>
