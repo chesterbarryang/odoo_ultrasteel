@@ -47,6 +47,5 @@ class account_invoice_ultrasteel(models.Model):
     @api.one
     def action_approve_payment(self):
         self.state = 'approve'
-        return true
 
 account_invoice_ultrasteel()
