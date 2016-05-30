@@ -14,6 +14,7 @@
 
             <button name="%(action_account_invoice_payment)d" position="attributes">
                 <attribute name="states">open</attribute>
+            </button>
 
             <button name="%(action_account_invoice_refund)d">
                 <button name="%(action_account_invoice_refund)d" type='action' string='Ask Refund' groups="account.group_account_invoice" attrs="{'invisible': ['|',('type', '=', 'in_refund'),('state','not in',('open','approve','paid'))]}"/>
