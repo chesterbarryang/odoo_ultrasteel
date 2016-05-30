@@ -13,10 +13,10 @@
             </button>
 
             <button name="%(account.action_account_invoice_payment)d" position="attributes">
-                <attribute name="states">open</attribute>
+                <attribute name="states">approve</attribute>
             </button>
 
-            <button name="%(account.action_account_invoice_refund)d">
+            <button name="%(account.action_account_invoice_refund)d" position="replace">
                 <button name="%(account.action_account_invoice_refund)d" type='action' string='Ask Refund' groups="account.group_account_invoice" attrs="{'invisible': ['|',('type', '=', 'in_refund'),('state','not in',('open','approve','paid'))]}"/>
             </button>
 
