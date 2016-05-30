@@ -32,7 +32,7 @@ class account_invoice_ultrasteel(models.Model):
         ('proforma', 'Pro-forma'),
         ('proforma2', 'Pro-forma'),
         ('open', 'Open'),
-        ('approve', "Approve")
+        ('approve', "Approve"),
         ('paid', 'Paid'),
         ('cancel', 'Cancelled'),
     ], string='Status', index=True, readonly=True, default='draft',
