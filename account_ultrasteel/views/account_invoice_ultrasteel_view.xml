@@ -8,11 +8,24 @@
         <field name="inherit_id" ref="account.invoice_supplier_form" />
         <field name="priority" eval="900"/>
         <field name="arch" type="xml">
-          <button name="invoice_open" position="after">
-            <button name="invoice_approve" states="open" string="Approve" class="oe_highlight" groups="base.group_user"/>
-          </button>
+            <button name="invoice_open" position="after">
+              <button name="invoice_approve" states="open" string="Approve" class="oe_highlight" groups="base.group_user"/>
+            </button>
+
+            <button name="%(action_account_invoice_payment)d" position="attributes">
+                <attribute name="states">open</attribute>
+
+            <button name="%(action_account_invoice_refund)d">
+                <button name="%(action_account_invoice_refund)d" type='action' string='Ask Refund' groups="account.group_account_invoice" attrs="{'invisible': ['|',('type', '=', 'in_refund'),('state','not in',('open','approve','paid'))]}"/>
+            </button>
+
+            <field name="state" position="attributes">
+                <attribute name="statusbar_visible">draft,open,approve,paid</attribute>
+            </field>
         </field>
     </record>
+
+
 
 </data>
 </openerp>
