@@ -5,7 +5,7 @@
             <field name="wkf_id" ref="account.wkf"/>
             <field name="name">Approved</field>
             <field name="kind">function</field>
-            <field name="action">write(chester)</field>
+            <field name="action">action_approve_payment()</field>
         </record>
 
         <record id="trans_payment_open_to_approved" model="workflow.transition">
