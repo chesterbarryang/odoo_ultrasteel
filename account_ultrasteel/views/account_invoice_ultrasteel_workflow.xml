@@ -3,15 +3,29 @@
     <data>
         <record id="act_approved_invoice" model="workflow.activity">
             <field name="wkf_id" ref="account.wkf"/>
-            <field name="name">Approved</field>
+            <field name="name">approve</field>
             <field name="kind">function</field>
-            <field name="action">action_approve_payment()</field>
+            <field name="action">account_ultrasteel.action_approve_payment()</field>
         </record>
 
         <record id="trans_payment_open_to_approved" model="workflow.transition">
             <field name="act_from" ref="account.act_open"/>
             <field name="act_to" ref="act_approved_invoice"/>
             <field name="signal">signal_approve_payment</field>
+        </record>
+
+        <record id="t8" model="workflow.transition">
+            <field name="act_from" ref="act_approved_invoice"/>
+            <field name="act_to" ref="account.act_paid"/>
+            <field name="trigger_model"/>
+            <field name="trigger_expr_id"/>
+            <field name="condition">reconciled</field>
+        </record>
+
+        <record id="t12" model="workflow.transition">
+            <field name="act_from" ref="act_approved_invoice"/>
+            <field name="act_to" ref="account.act_cancel"/>
+            <field name="signal">invoice_cancel</field>
         </record>
     </data>
 </openerp>
