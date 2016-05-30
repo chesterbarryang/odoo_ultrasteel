@@ -46,6 +46,7 @@ class account_invoice_ultrasteel(models.Model):
 
     @api.one
     def action_approve_payment(self):
-        return self.write({'state': 'approve'})
+        self.state = 'approve'
+        return true
 
 account_invoice_ultrasteel()
