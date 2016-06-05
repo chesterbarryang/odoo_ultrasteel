@@ -17,8 +17,8 @@
             string="Payment Voucher"
             model="account.invoice"
             report_type="qweb-pdf"
-            file="account_ultrasteel.report_payment_voucher"
-            name="account_ultrasteel.report_payment_voucher"
+            file="account_ultrasteel.report_paymentvoucher"
+            name="account_ultrasteel.report_paymentvoucher"
         />
 
     </data>

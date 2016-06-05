@@ -9,7 +9,7 @@
         <field name="priority" eval="900"/>
         <field name="arch" type="xml">
             <button name="invoice_open" position="after">
-              <button name="invoice_approve" states="open" string="Approve" class="oe_highlight" groups="base.group_user"/>
+              <button name="invoice_approve" states="open" string="For Approval" class="oe_highlight" groups="base.group_user"/>
             </button>
 
             <button name="%(account.action_account_invoice_payment)d" position="attributes">
