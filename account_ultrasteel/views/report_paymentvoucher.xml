@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <h2>
+            <!--<h2>
                 <span t-if="doc.state not in ['draft','sent']">Order # </span>
                 <span t-if="doc.state in ['draft','sent']">Quotation # </span>
                 <span t-field="doc.name"/>
@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <!-- Is there a discount on at least one line? -->
+            &lt;!&ndash; Is there a discount on at least one line? &ndash;&gt;
             <t t-set="display_discount" t-value="any([l.discount for l in doc.order_line])"/>
 
             <table class="table table-condensed">
@@ -149,7 +149,7 @@
                 <strong>Fiscal Position Remark:</strong>
                 <span t-field="doc.fiscal_position_id.note"/>
             </p>
-            <div class="oe_structure"/>
+            <div class="oe_structure"/>-->
         </div>
     </t>
 </template>
