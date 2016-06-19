@@ -46,7 +46,7 @@
 
                 <t t-set="row_counter" t-value="1"/>
 
-                <tbody class="sale_tbody">
+                <tbody class="sale_tbody" style="border-right: solid; border-right-width: thin">
                     <tr>
                         <td>
                             <t t-esc="row_counter"/>
