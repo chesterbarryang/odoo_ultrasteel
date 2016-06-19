@@ -8,7 +8,7 @@
             <!--<div class="oe_structure"/>-->
 
             <div class="row">
-                <div class="col-xs-2 col-xs-offset-9">
+                <div class="col-xs-3 col-xs-offset-9">
                     <span>No:<u>BL-G00008540U</u></span> <br/>
                     <span>Date: 04-Feb-2016</span>
                 </div>
@@ -16,7 +16,7 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <strong>FROM: <u>TACLOBAN ULTRASTEEL CORPORATION  (UTAP)</u></strong> <br/>
+                    <strong>FROM: <u>TACLOBAN ULTRASTEEL CORPORATION  (UTAP)</u></strong> <br/><br/>
                     <strong>PAY TO ORDER OF</strong>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                 <div class="col-xs-9 col-xs-offset-1">
                     <strong>EREANTIC CORPORATION</strong>
                 </div>
-                <div class="col-xs-3 col-xs-offset-9">
+                <div class="col-xs-2 col-xs-offset-10">
                     <p>TERMS: N12</p>
                 </div>
             </div>
