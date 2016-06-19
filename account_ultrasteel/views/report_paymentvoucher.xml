@@ -4,38 +4,28 @@
 <template id="report_paymentvoucher_document">
     <!--<t t-call="report.external_layout">-->
         <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})" />
-        <div class="page" style="font-size: 12pt">
+        <div class="page" style="font-size: 9pt">
             <!--<div class="oe_structure"/>-->
 
             <div class="row">
-                <div class="col-xs-2 col-xs-offset-10">
-                    <span>No:<u>BL-G00008540U</u></span>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-2 col-xs-offset-10">
+                <div class="col-xs-2 col-xs-offset-9">
+                    <span>No:<u>BL-G00008540U</u></span> <br/>
                     <span>Date: 04-Feb-2016</span>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-xs-6">
-                    <strong>FROM: <u>TACLOBAN ULTRASTEEL CORPORATION  (UTAP)</u></strong>
-                </div>
-            </div>
-
-            <div class="row">
                 <div class="col-xs-12">
+                    <strong>FROM: <u>TACLOBAN ULTRASTEEL CORPORATION  (UTAP)</u></strong> <br/>
                     <strong>PAY TO ORDER OF</strong>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-xs-6 col-xs-offset-2">
+                <div class="col-xs-9 col-xs-offset-1">
                     <strong>EREANTIC CORPORATION</strong>
                 </div>
-                <div class="col-xs-1 col-xs-offset-11">
+                <div class="col-xs-3 col-xs-offset-9">
                     <p>TERMS: N12</p>
                 </div>
             </div>
