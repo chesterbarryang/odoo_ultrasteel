@@ -84,11 +84,9 @@
 
             <div class="row">
                 <div class="col-xs-3" style="border-top: solid; text-align: center; border-top-width:thin">
-                    <br/>
                     CEO/COO
                 </div>
-                <div class="col-xs-3 col-xs-offset-2" style="border-top: solid; text-align: center; border-top-width:thin">
-                    <br/>
+                <div class="col-xs-4 col-xs-offset-4" style="border-top: solid; text-align: center; border-top-width:thin">
                     Signature over printed name
                 </div>
             </div>
