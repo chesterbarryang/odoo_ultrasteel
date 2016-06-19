@@ -67,10 +67,10 @@
             </table>
 
             <div class="row">
-                <div class="col-xs-6">
+                <div class="col-xs-3">
                     <span>Approved by:</span>
                 </div>
-                <div class="col-xs-6 col-xs-offset-6">
+                <div class="col-xs-5 col-xs-offset-6">
                     <span>Receipt of above hereby acknowledge by:</span>
                 </div>
             </div>
