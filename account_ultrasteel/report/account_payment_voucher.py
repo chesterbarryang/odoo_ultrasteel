@@ -31,17 +31,15 @@ class ReportPaymentVoucher(models.AbstractModel):
 
     @api.multi
     def render_html(self, data):
-        partner_list = []
+
         model = self.env.context.get('active_model')
         docs = self.env[model].browse(self.env.context.get('active_id'))
 
-        invoice_id = data['form'].get('account_id')[0]
+        invoice_id = data['form'].get('id')[0]
 
-        partner_list.append(partner_id)
+        _logger.info('invoice_id: %s', invoice_id)
 
-        _logger.info('invoice_id: %s', account_id)
-
-        payment_voucher = self._get_payment_invoice_voucher(account_id)
+        payment_voucher = self._get_payment_invoice_voucher(invoice_id)
 
         docargs = {
             'doc_ids': self.ids,
