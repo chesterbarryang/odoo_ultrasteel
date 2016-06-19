@@ -2,28 +2,46 @@
 <openerp>
 <data>
 <template id="report_paymentvoucher_document">
-    <t t-call="report.external_layout">
+    <!--<t t-call="report.external_layout">-->
         <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})" />
         <div class="page">
             <div class="oe_structure"/>
 
             <div class="row">
-                <div class="col-xs-6">
-                    <strong>No:</strong>
+                <div class="col-xs-3 col-xs-push-3">
+                    <span>No:<u>BL-G00008540U</u></span>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-xs-4">
-                    <strong>From:</strong>
-                    <span>Date:</span>
+                <div class="col-xs-3 col-xs-push-3">
+                    <span>Date: 04-Feb-2016</span>
                 </div>
             </div>
 
-            <h2>
-                <span>PAY TO ORDER OF</span>
-                <span>EREANTIC CORPORATION</span>
-            </h2>
+            <div class="row">
+                <div class="col-xs-6">
+                    <strong>FROM: <u>TACLOBAN ULTRASTEEL CORPORATION  (UTAP)</u></strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <strong>PAY TO ORDER OF</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6 col-xs-pull-1">
+                    <strong>EREANTIC CORPORATION</strong>
+                </div>
+                <div class="col-xs-2 col-xs-push-2">
+                    <p>TERMS: N12</p>
+                </div>
+            </div>
+
+
+
 
 <!--
 
@@ -229,7 +247,7 @@
             </p>-->
             <div class="oe_structure"/>
         </div>
-    </t>
+    <!--</t>-->
 </template>
 
 
