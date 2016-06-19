@@ -75,12 +75,15 @@
                 </div>
             </div>
 
+            <br/>
+            <br/>
+
             <div class="row">
                 <div class="col-xs-3" style="border-top: solid; text-align: center">
                     <br/>
                     <span >CEO/COO</span>
                 </div>
-                <div class="col-xs-6 col-xs-offset-6" style="border-top: solid; text-align: center">
+                <div class="col-xs-5 col-xs-offset-6" style="border-top: solid; text-align: center; border-top-width:70%">
                     <br/>
                     <span>Signature over printed name</span>
                 </div>
