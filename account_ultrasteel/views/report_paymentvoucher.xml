@@ -4,12 +4,13 @@
 <template id="report_paymentvoucher_document">
     <!--<t t-call="report.external_layout">-->
         <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})" />
+        <t t-set="var" t-value="get_payment_voucher" />
         <div class="page" style="font-size: 9pt">
             <!--<div class="oe_structure"/>-->
 
             <div class="row">
                 <div class="col-xs-3 col-xs-offset-9">
-                    <span>No:<u>BL-G00008540U</u></span> <br/>
+                    <span>No:<u>BL-G00008540U t-field="var.number"</u></span> <br/>
                     <span>Date: 04-Feb-2016</span>
                 </div>
             </div>
@@ -33,7 +34,7 @@
             <br/>
             <br/>
 
-            <table class="table table-condensed">
+            <table class="table table-condensed" style="border: solid; border-width: thin">
                 <thead>
                     <tr>
                         <th>NO</th>
@@ -46,7 +47,7 @@
 
                 <t t-set="row_counter" t-value="1"/>
 
-                <tbody class="sale_tbody" style="border-right: solid; border-right-width: thin">
+                <tbody class="sale_tbody">
                     <tr>
                         <td>
                             <t t-esc="row_counter"/>
