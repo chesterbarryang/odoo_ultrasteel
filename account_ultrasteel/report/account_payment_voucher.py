@@ -16,7 +16,7 @@ class ReportPaymentVoucher(models.AbstractModel):
         cr = self.env.cr
 
         # This dictionary will get account invoice for voucher payment details
-        cr.execute("SELECT DISTINCT ai.number as number, ai.partner_id, ai.amount_total, ai.reference, \
+        cr.execute("SELECT DISTINCT ai.number, ai.partner_id, ai.amount_total, ai.reference, \
                         ai.date_due, po.payment_term_id, po.name, po.date_order \
                     FROM purchase_order as po, purchase_order_line as pol, \
                         account_invoice as ai, account_invoice_line as ail \
