@@ -37,6 +37,7 @@ class ReportPaymentVoucher(models.AbstractModel):
 
         invoice_id = data['form'].get('id')[0]
 
+        _logger.info('self id: %s', self.ids[0])
         _logger.info('invoice_id: %s', invoice_id)
 
         payment_voucher = self._get_payment_invoice_voucher(invoice_id)
