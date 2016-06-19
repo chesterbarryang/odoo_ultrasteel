@@ -2,7 +2,7 @@
 <openerp>
 <data>
 <template id="report_paymentvoucher_document">
-    <!--<t t-call="report.external_layout">-->
+    <t t-call="report.external_layout">
         <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})" />
         <div class="page">
             <div class="oe_structure"/>
@@ -247,7 +247,7 @@
             </p>-->
             <div class="oe_structure"/>
         </div>
-    <!--</t>-->
+    </t>
 </template>
 
 
