@@ -7,7 +7,7 @@
             </xpath>
 
             <xpath expr="//t[@t-call='report.external_layout_footer']" position="attributes">
-                <attribute name="t-call">stock_ultrasteel.external_layout_before_footer</attribute>
+                <attribute name="t-call">stock_ultrasteel.external_layout_stockpicking_footer</attribute>
             </xpath>
 
         </template>
@@ -20,7 +20,7 @@
             </xpath>
         </template>
 
-        <template id="external_layout_before_footer" inherit_id="report.external_layout_footer" primary="True">
+        <template id="external_layout_stockpicking_footer" inherit_id="report.external_layout_footer" primary="True">
             <xpath expr="//div[@class='text-center']" position="before">
                 <div class="row">
                     <div class="col-xs-3" style="border-top: solid; text-align: center; border-top-width:thin">
@@ -29,6 +29,8 @@
                     <div class="col-xs-4 col-xs-offset-4" style="border-top: solid; text-align: center; border-top-width:thin">
                         Received By:
                     </div>
+                    <br/>
+                    <br/>
                 </div>
             </xpath>
         </template>

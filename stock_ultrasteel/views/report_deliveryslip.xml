@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
+    <template id="external_layout_deliveryslip" inherit_id="report.external_layout" primary="True">
+        <xpath expr="//t[@t-call='report.external_layout_footer']" position="attributes">
+            <attribute name="t-call">stock_ultrasteel.external_layout_deliveryslip_footer</attribute>
+        </xpath>
+
+    </template>
+
+    <template id="external_layout_deliveryslip_footer" inherit_id="report.external_layout_footer" primary="True">
+        <xpath expr="//div[@class='text-center']" position="before">
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-7" style="border-top: solid; text-align: center; border-top-width:thin">
+                    Received By:
+                </div>
+                <br/>
+                <br/>
+            </div>
+        </xpath>
+    </template>
+
     <template id="report_delivery_document">
         <t t-call="report.html_container">
-            <t t-call="report.external_layout">
+            <t t-call="stock_ultrasteel.external_layout_deliveryslip">
                 <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
                 <div class="page">
                     <div class="row">
