@@ -21,7 +21,7 @@
         </template>
 
         <template id="external_layout_before_footer" inherit_id="report.external_layout_footer" primary="True">
-            <xpath expr="//div[0]" position="after">
+            <xpath expr="//div[@class=text-center]" position="before">
                 <div class="row">
                     <div class="col-xs-3" style="border-top: solid; text-align: center; border-top-width:thin">
                         Prepared By:
