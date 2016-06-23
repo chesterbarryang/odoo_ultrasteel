@@ -128,7 +128,7 @@
 
     <template id="report_deliveryslip">
         <t t-foreach="docs" t-as="o">
-            <t t-call="stock.report_delivery_document" t-lang="o.partner_id.lang"/>
+            <t t-call="stock_ultrasteel.report_delivery_document" t-lang="o.partner_id.lang"/>
         </t>
     </template>
 

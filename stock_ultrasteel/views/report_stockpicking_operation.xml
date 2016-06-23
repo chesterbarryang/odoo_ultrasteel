@@ -3,7 +3,7 @@
     <data>
         <template id="external_layout_barcode_right" inherit_id="report.external_layout" primary="True">
             <xpath expr="//t[@t-call='report.external_layout_header']" position="attributes">
-                <attribute name="t-call">stock.external_layout_header_barcode_right</attribute>
+                <attribute name="t-call">stock_ultrasteel.external_layout_header_barcode_right</attribute>
             </xpath>
         </template>
         <template id="external_layout_header_barcode_right" inherit_id="report.external_layout_header" primary="True">
@@ -13,10 +13,10 @@
                 </div>
             </xpath>
         </template>
-        <template id="report_picking">
+        <template id="report_stockpicking_operation">
             <t t-call="report.html_container">
                 <t t-foreach="docs" t-as="o">
-                    <t t-call="stock.external_layout_barcode_right">
+                    <t t-call="stock_ultrasteel.external_layout_barcode_right">
                         <div class="page">
                             <br/>
                             <div class="row">
