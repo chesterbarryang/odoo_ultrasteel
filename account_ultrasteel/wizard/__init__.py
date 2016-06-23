@@ -4,3 +4,4 @@
 
 
 import account_report_billing_approval
+import account_report_payment_voucher

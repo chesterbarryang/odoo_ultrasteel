@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
+        <record id="act_for_approval_invoice" model="workflow.activity">
+            <field name="wkf_id" ref="account.wkf"/>
+            <field name="name">for_approval</field>
+            <field name="kind">function</field>
+            <field name="action">action_for_approval()</field>
+        </record>
+
         <record id="act_approved_invoice" model="workflow.activity">
             <field name="wkf_id" ref="account.wkf"/>
-            <field name="name">approve</field>
+            <field name="name">approved</field>
             <field name="kind">function</field>
             <field name="action">action_approve_payment()</field>
         </record>
 
-        <record id="trans_payment_open_to_approved" model="workflow.transition">
+        <record id="trans_payment_open_to_for_approval" model="workflow.transition">
             <field name="act_from" ref="account.act_open"/>
+            <field name="act_to" ref="act_for_approval_invoice"/>
+            <field name="signal">invoice_for_approval</field>
+        </record>
+
+        <record id="trans_for_approval_to_approved" model="workflow.transition">
+            <field name="act_from" ref="act_for_approval_invoice"/>
             <field name="act_to" ref="act_approved_invoice"/>
-            <field name="signal">invoice_approve</field>
+            <field name="signal">invoice_approved</field>
         </record>
 
         <record id="t8" model="workflow.transition">

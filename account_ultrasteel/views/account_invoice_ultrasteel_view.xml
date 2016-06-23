@@ -9,19 +9,23 @@
         <field name="priority" eval="900"/>
         <field name="arch" type="xml">
             <button name="invoice_open" position="after">
-              <button name="invoice_approve" states="open" string="For Approval" class="oe_highlight" groups="base.group_user"/>
+              <button name="invoice_for_approval" states="open" string="For Approval" class="oe_highlight" groups="base.group_user"/>
+            </button>
+
+            <button name="invoice_for_approval" position="after">
+              <button name="invoice_approved" states="for_approval" string="Approved" class="oe_highlight" groups="base.group_user"/>
             </button>
 
             <button name="%(account.action_account_invoice_payment)d" position="attributes">
-                <attribute name="states">approve</attribute>
+                <attribute name="states">approved</attribute>
             </button>
 
             <button name="%(account.action_account_invoice_refund)d" position="replace">
-                <button name="%(account.action_account_invoice_refund)d" type='action' string='Ask Refund' groups="account.group_account_invoice" attrs="{'invisible': ['|',('type', '=', 'in_refund'),('state','not in',('open','approve','paid'))]}"/>
+                <button name="%(account.action_account_invoice_refund)d" type='action' string='Ask Refund' groups="account.group_account_invoice" attrs="{'invisible': ['|',('type', '=', 'in_refund'),('state','not in',('open','for_approval','approved','paid'))]}"/>
             </button>
 
             <field name="state" position="attributes">
-                <attribute name="statusbar_visible">draft,open,approve,paid</attribute>
+                <attribute name="statusbar_visible">draft,open,for_approval,approved,paid</attribute>
             </field>
         </field>
     </record>
