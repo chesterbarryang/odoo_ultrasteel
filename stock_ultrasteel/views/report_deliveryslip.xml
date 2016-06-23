@@ -121,18 +121,16 @@
                             </tr>
                         </tbody>
                     </table>
-
-                    <div class="row">
-                        <div class="col-xs-3" style="border-top: solid; text-align: center; border-top-width:thin">
-
-                        </div>
-                        <div class="col-xs-4 col-xs-offset-4" style="border-top: solid; text-align: center; border-top-width:thin">
-                            Received By:
-                        </div>
-                    </div>
-
                 </div>
             </t>
+
+             <div class="row">
+                <div class="col-xs-4 col-xs-offset-7" style="border-top: solid; text-align: center; border-top-width:thin">
+                    Received By:
+                </div>
+            </div>
+
+
          </t>
     </template>
 
