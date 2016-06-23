@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report
+            string="Picking Slip (Custom)"
+            id="action_report_stockpicking_operation_ultrasteel"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="stock_ultrasteel.report_stockpicking_operation"
+            file="stock_ultrasteel.report_stockpicking_operation"
+        />
+
+        <report
+            string="Delivery Slip (Custom)"
+            id="action_report_deliveryslip_ultrasteel"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="stock_ultrasteel.report_deliveryslip"
+            file="stock_ultrasteel.report_deliveryslip"
+        />
+
+    </data>
+</openerp>
