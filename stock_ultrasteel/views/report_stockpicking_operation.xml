@@ -5,7 +5,13 @@
             <xpath expr="//t[@t-call='report.external_layout_header']" position="attributes">
                 <attribute name="t-call">stock_ultrasteel.external_layout_header_barcode_right</attribute>
             </xpath>
+
+            <xpath expr="//t[@t-call='report.external_layout_footer']" position="attributes">
+                <attribute name="t-call">stock_ultrasteel.external_layout_before_footer</attribute>
+            </xpath>
+
         </template>
+
         <template id="external_layout_header_barcode_right" inherit_id="report.external_layout_header" primary="True">
             <xpath expr="//div[@name='company_address']" position="after">
                 <div class="col-xs-4 pull-right" name="right_box">
@@ -13,6 +19,20 @@
                 </div>
             </xpath>
         </template>
+
+        <template id="external_layout_before_footer" inherit_id="report.external_layout_footer" primary="True">
+            <xpath expr="//div[0]" position="after">
+                <div class="row">
+                    <div class="col-xs-3" style="border-top: solid; text-align: center; border-top-width:thin">
+                        Prepared By:
+                    </div>
+                    <div class="col-xs-4 col-xs-offset-4" style="border-top: solid; text-align: center; border-top-width:thin">
+                        Received By:
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
         <template id="report_stockpicking_operation">
             <t t-call="report.html_container">
                 <t t-foreach="docs" t-as="o">
@@ -138,16 +158,6 @@
                         </div>
                     </t>
                  </t>
-
-                <div class="row">
-                    <div class="col-xs-3" style="border-top: solid; text-align: center; border-top-width:thin">
-                        Prepared By:
-                    </div>
-                    <div class="col-xs-4 col-xs-offset-4" style="border-top: solid; text-align: center; border-top-width:thin">
-                        Received By:
-                    </div>
-                </div>
-
              </t>
         </template>
     </data>
